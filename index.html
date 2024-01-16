@@ -7,6 +7,9 @@
     <title>首頁</title>
     <style>
         .sub-title {
+            /* block ,inline,inline-block */
+            width: 400px;
+            display: inline-block;
             text-align: left;
             background-color: #D24545;
             color: #E4DEBE;
@@ -33,7 +36,8 @@
         }
 
         body {
-            background-color: #A94438;
+            background-image: url("images/hayley-kim-studios-eot-ka5dM7Q-unsplash.jpg");
+            background-size: contain;
             color: white;
             font-family: 標楷體, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
@@ -111,7 +115,9 @@
         form {
             width: 60%;
             background-color: #E4DEBE;
-            color: black;
+            background-image: url("images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg");
+            background-size: cover;
+            color: white;
             padding: 1rem 0px;
             border-radius: 1rem;
             margin: 6px auto;
@@ -129,6 +135,18 @@
             background-color: aqua;
             width: 100px;
             border-radius: 6px;
+        }
+
+        a {
+            color: #E4DEBE;
+        }
+
+        a:hover {
+            color: yellow;
+        }
+
+        a:active {
+            color: white;
         }
     </style>
 </head>
@@ -152,7 +170,7 @@
         <hr>
         <!-- px=>pixel -->
         <a target="_blank" href="https://www.16pic.com/pic/pic_8710805.html">
-            <img width="100%"
+            <img width="100%" style="padding: 6px; background-color: white;"
                 src="https://light.kaik.network/image/width=1920,quality=80/school/banner/cccd7a0c-80b6-4b68-97a3-19d6cb332929/b76aae03-378e-4f2e-a7e4-88a4ce7eef25.png@webp"
                 alt="找不到圖片">
         </a>
@@ -262,8 +280,7 @@
                 <input type="email" id="email" name="email" placeholder="請輸入Email" required>
                 <br>
                 <label for="info">建議:</label><br>
-                <textarea name="info" id="info" cols="30" rows="10"></textarea>
-
+                <textarea style="background-color: aliceblue;" name="info" id="info" cols="20" rows="10"></textarea>
                 <p>
                     <button type="submit">發送</button>
                     <button type="reset" style="background-color: red;color: white;">清除</button>
