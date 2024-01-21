@@ -8,25 +8,30 @@ const result = document.querySelector("#result");
 
 console.log(userNameEl, heightEl, weightEl, resetEl);
 
-
-resetEl.addEventListener("click", function () {
+function clearForm() {
     bmiEl.innerText = "";
     commentEl.innerText = "";
     result.style.height = "50px";
     result.style.background = "white";
+}
 
-});
 
-function getBmi() {
+resetEl.addEventListener("click", clearForm);
+
+function calcBmi() {
     let username = userNameEl.value;
     let height = heightEl.value;
     let weight = weightEl.value;
-    let bmi = (weight / (height / 100) ** 2).toFixed(2);
-    console.log(username, bmi);
-    bmiEl.innerText = bmi;
+
+    if (height == '' || weight == '') {
+        bmiEl.innerText = "輸入不能為空";
+        return;
+    }
+
+    let bmi = getBmi(height, weight);
 
     if (isNaN(bmi)) {
-        bmiEl.innerText = "輸入不正確!";
+        bmiEl.innerText = bmi;
         return;
     }
 
@@ -37,6 +42,7 @@ function getBmi() {
         comment = "正常!"
     }
 
+    bmiEl.innerText = bmi;
     commentEl.innerText = comment;
     result.style.background = "orange";
     result.style.height = "100px";
